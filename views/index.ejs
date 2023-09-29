@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs")%>
+<section class="input-box">
+  <div class="heading">
+    <h1>Enter a word, phrase or artist's name to search.</h1>
+  </div>
+  <div class="form">
+    <form action="/" id="search" method="post">
+      <input
+        type="text"
+        id="searchInput"
+        name="input"
+        placeholder="Example; 'Hello', 'Love me' or 'Adel'"
+      />
+      <button class="search-btn">
+        Search<span class="material-symbols-outlined btn"> search </span>
+      </button>
+    </form>
+  </div>
+</section>
+<hr />
+<section class="result-box">
+  <% if (locals.searchOutput) {%>
+  <div class="result">
+    <h2>Suggested sounds</h2>
+  </div>
+  <div class="tracks">
+    <ul>
+      <%searchOutput.tracks.hits.forEach((element) =>{%>
+      <div class="track">
+        <li>
+          <div class="cover-art">
+            <img src="<%=element.track.images.coverart %>" />
+          </div>
+          <div class="track-info">
+            <h3>Title: <%=element.track.share.subject %></h3>
+            <p>
+              <strong>Listen: </strong
+              ><a href="<%=element.track.share.href %>"
+                ><%=element.track.share.href %></a>
+            </p>
+          </div>
+        </li>
+      </div>
+      <%}) %>
+    </ul>
+  </div>
+  <%} %> <% if (locals.errorReq) {%>
+  <div class="error"><%=errorReq%></div>
+  <%} %>
+</section>
+<%- include("partials/footer.ejs")%>

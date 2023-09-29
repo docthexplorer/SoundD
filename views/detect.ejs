@@ -1,0 +1,80 @@
+<%- include("partials/header.ejs")%>
+<section class="input-box">
+  <div class="heading">
+    <h1>Detect song/music via recorded audio stream .</h1>
+  </div>
+  <div class="hint">
+
+    <ul>
+        <h3>
+            #Hint
+        </h3>
+        <li>
+            <p>Initiate audio recording by clicking on the mic icon.</p>
+        </li>
+        <li>
+            <p>Recorded audio must not be more than 3 seconds.</p>
+        </li>
+        <li>
+            <p>Lengthy recording will result in payload error.</p>
+        </li>
+        <li>
+            <p>Click on the stop icon to end recording.</p>
+        </li>
+        <li>
+            <p>Recorded audio may be played for quality assessment before detecting.</p>
+        </li>
+
+    </ul>
+  </div>
+  <div class="form">
+    <div id="detect">
+      <audio id="recorder" muted hidden></audio>
+      <button id="start">
+        <span class="material-symbols-outlined mic"> mic </span>
+      </button>
+      <button id="stop">
+        <span class="material-symbols-outlined mic"> stop_circle </span>
+      </button>
+      <audio id="player" controls></audio>
+      <form action="/detect" id="fetch" method="post">
+        <input id="audioString" name="input" hidden />
+        <button class="search-btn" type="submit">
+          Detect <span class="material-symbols-outlined btn"> graphic_eq </span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+<hr />
+<section class="result-box">
+  <% if (locals.audioResult) {%>
+  <div class="result">
+    <h2>Sound Detect</h2>
+  </div>
+  <div class="tracks">
+    <ul>
+      <div class="track">
+        <li>
+          <div class="cover-art">
+            <img src="<%= audioResult.result.spotify.album.images[1].url %>" />
+          </div>
+          <div class="track-info">
+            <h3>
+              Title: <%=audioResult.result.title%> - <%=
+              audioResult.result.artist %>
+            </h3>
+            <p>
+              <strong>Listen: </strong><a href="<%=audioResult.result.song_link%>">
+                <%= audioResult.result.song_link %></a>
+            </p>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+  <%} %> <% if (locals.errorReq) {%>
+  <div><%=errorReq%></div>
+  <%} %>
+</section>
+<%- include("partials/recorder.ejs")%> <%- include("partials/footer.ejs")%>

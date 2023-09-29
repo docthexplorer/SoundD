@@ -1,0 +1,233 @@
+:root {
+  --body-bg: #eeeded;
+  --header-bg: #aed8cc;
+  --h-link: #7a316f;
+  --heading: #cd6688;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--body-bg);
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+header,
+footer {
+  background-color: #aed8cc;
+  margin: 0;
+  padding-top: 0;
+  width: 100%;
+}
+footer {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+nav,
+.nav-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.nav-right {
+  padding: 0;
+  width: 20rem;
+}
+.logo {
+  font-family: "Oi", cursive;
+  font-size: x-large;
+  background: -webkit-linear-gradient(
+    22deg,
+    rgba(70, 25, 89, 1) 20%,
+    rgba(205, 102, 136, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-right a {
+  color: var(--h-link);
+  font-weight: bold;
+}
+.material-symbols-outlined {
+  vertical-align: middle;
+  color: var(--h-link);
+}
+.input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  height: 35rem;
+}
+.input-box * {
+  border-radius: 0.5rem;
+}
+.heading {
+  background-color: var(--heading);
+  margin: auto;
+  padding: 1rem;
+}
+
+h1 {
+  color: var(--body-bg);
+  margin: 0;
+}
+
+.hint ul {
+  background-color: var(--body-bg);
+  margin: 5rem auto;
+}
+
+.hint ul h3 {
+  color: var(--h-link);
+}
+
+.hint ul li {
+  color: var(--h-link);
+  list-style-type: decimal;
+}
+
+.hint ul p {
+  color: var(--h-link);
+  margin: 0.5rem;
+}
+
+h3 {
+  margin: 0;
+}
+#search,
+#detect {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  width: 50rem;
+}
+#detect {
+  width: 70rem;
+}
+#start,
+#stop {
+  border: none;
+  cursor: pointer;
+}
+
+#start:hover .mic,
+#stop:hover .mic {
+  color: var(--heading);
+}
+
+#start em,
+em > .listen {
+  color: var(--heading);
+}
+#searchInput {
+  border-style: none;
+  box-shadow: inset 0 0 0.2rem var(--header-bg, 0 0 0.2rem var(--header-bg));
+  width: 38rem;
+  padding: 1rem;
+}
+#searchInput:focus {
+  outline: none;
+  border: 1px solid var(--h-link);
+  box-shadow: 0 0 1rem var(--header-bg);
+}
+
+.search-btn {
+  background: #aed8cc;
+  background-image: -webkit-linear-gradient(top, #aed8cc, #7a316f);
+  background-image: -moz-linear-gradient(top, #aed8cc, #7a316f);
+  background-image: -ms-linear-gradient(top, #aed8cc, #7a316f);
+  background-image: -o-linear-gradient(top, #aed8cc, #7a316f);
+  background-image: linear-gradient(to bottom, #aed8cc, #7a316f);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 0.5rem;
+  border-style: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: small;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+.btn {
+  color: #ffffff;
+}
+.search-btn:hover {
+  background: #aed8cc;
+  background-image: -webkit-linear-gradient(top, #aed8cc, #cd6688);
+  background-image: -moz-linear-gradient(top, #aed8cc, #cd6688);
+  background-image: -ms-linear-gradient(top, #aed8cc, #cd6688);
+  background-image: -o-linear-gradient(top, #aed8cc, #cd6688);
+  background-image: linear-gradient(to bottom, #aed8cc, #cd6688);
+  border-style: none;
+  text-decoration: none;
+}
+.result-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+.result h2 {
+  color: var(--h-link);
+  text-align: center;
+}
+.tracks {
+  margin: 0 auto;
+  width: 50%;
+}
+.track {
+  margin-bottom: 5rem;
+}
+li {
+  list-style-type: none;
+}
+.cover-art {
+  float: left;
+  margin-right: 1rem;
+}
+img {
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+}
+.track-info h3 {
+  color: var(--h-link);
+}
+.track-info p {
+  color: var(--heading);
+  margin: 1rem;
+}
+.track-info p > a {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.track-info p > a:hover {
+  color: var(--header-bg);
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+}
+
+.footer p {
+  color: var(--h-link);
+}
