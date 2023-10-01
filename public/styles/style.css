@@ -15,6 +15,7 @@ body {
   padding: 0;
   font-family: "Montserrat", sans-serif;
 }
+
 header,
 footer {
   background-color: #aed8cc;
@@ -25,6 +26,11 @@ footer {
 footer {
   padding: 5rem 0;
   text-align: center;
+}
+
+nav {
+  position: relative;
+
 }
 
 nav,
@@ -59,6 +65,10 @@ a {
 .nav-right a {
   color: var(--h-link);
   font-weight: bold;
+}
+
+.nav-right a:hover {
+  opacity: 0.5;
 }
 .material-symbols-outlined {
   vertical-align: middle;
@@ -202,7 +212,7 @@ li {
   float: left;
   margin-right: 1rem;
 }
-img {
+.artwork {
   border-radius: 50%;
   height: 5rem;
   width: 5rem;
@@ -230,4 +240,88 @@ img {
 
 .footer p {
   color: var(--h-link);
+}
+
+@media (min-width: 600px) {
+  .menu-icon {
+      display: none;
+  }
+}
+
+@media (max-width: 600px) {
+
+  #detect, #search {
+    width: 40rem;
+  }
+
+  #player {
+    width: 20rem;
+  }
+
+  #searchInput {
+    width: 25rem;
+    height: 3.5rem;
+  }
+
+  .search-btn {
+    padding: 0.25rem;
+  }
+
+  .tracks {
+    width: 75%;
+  }
+    
+  .nav-right {
+      display: none;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+
+  .navigation--mobile {
+      top: 7rem;
+      position: absolute;
+      right: 0;
+      display: flex;
+      padding: 5rem 1rem;
+      min-height: 25%;
+      background-color: var(--header-bg);       
+      flex-direction: column;
+      justify-content: space-around;
+      /*align-items: flex-start;*/
+      opacity: 0.95;
+      animation: fadein 0.3s forwards;
+  }
+
+  @keyframes fadein {
+      0% {
+          opacity: 0;
+          width: 0;
+          height: 0;
+      }
+      100% {
+          opacity: 1;
+          width: 100%;
+          height: calc(25vh - 7rem);
+      }
+  }
+
+  .navigation--mobile--fadeout {
+      animation: fadeout 300ms forwards;
+  }
+
+  @keyframes fadeout {
+      0% {
+          opacity: 1;
+          width: 100%;
+          height: calc(25vh - 7rem);
+      }
+      100% {
+          opacity: 0;
+          width: 0;
+          height: 0;
+      }
+  }
+
 }

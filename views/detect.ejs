@@ -57,7 +57,7 @@
       <div class="track">
         <li>
           <div class="cover-art">
-            <img src="<%= audioResult.result.spotify.album.images[1].url %>" />
+            <img class="artwork" src="<%= audioResult.result.spotify.album.images[1].url %>" />
           </div>
           <div class="track-info">
             <h3>
@@ -74,7 +74,9 @@
     </ul>
   </div>
   <%} %> <% if (locals.errorReq) {%>
-  <div><%=errorReq%></div>
+  <div class="error"><%=errorReq%></div>
   <%} %>
 </section>
-<%- include("partials/recorder.ejs")%> <%- include("partials/footer.ejs")%>
+<%- include("partials/hamburger-menu.ejs")%>
+<%- include("partials/recorder.ejs")%>
+<%- include("partials/footer.ejs")%>
