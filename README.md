@@ -15,7 +15,9 @@ phrase, artist's name or recorded audio sample. API keys are free trials, expira
 
 # App Interface
 * **Keyword Search Screen**
+
 ![soundd1](https://github.com/docthexplorer/SoundD/assets/132590220/1a1ec157-3bfa-4505-949a-e269b9840580)
 
 * **Sound Recording Screen**
+
 ![soundd2](https://github.com/docthexplorer/SoundD/assets/132590220/01679ae9-962e-454a-a041-a774a14bc8ae)
